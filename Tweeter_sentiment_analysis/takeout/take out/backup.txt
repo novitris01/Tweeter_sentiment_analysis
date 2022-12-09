@@ -1,0 +1,50 @@
+public void generateHashListNegative2()
+    {
+    	int countWord=0;
+    	 for (String temp_negative : twitterListNegative)
+         {
+         	 String[] word = temp_negative.split(" ");
+         	 for (String each_word : word)
+              {
+         		 countWord = 0;
+                  for(String temp_string : twitterListNegative)
+                  {
+                 	 String[] split_word = temp_string.split(" ");
+
+                 	 for(String compare_word : split_word)
+                 	 {
+                 		 if (compare_word.equals(each_word)) countWord++;
+                 	 }
+                  wordInNegative.put(each_word, countWord);
+                  totalWordNegative++;
+                  uniqueWords.add(each_word.trim());
+                  }
+              }
+         }
+    }
+
+    public void generateHashListPositive2()
+    {
+    	int countWord = 0;
+        for (String temp_positive : twitterListPositive)
+        {
+
+        	 String[] word = temp_positive.split(" ");
+        	 for (String each_word : word)
+             {
+        		 countWord = 0;
+                 for(String temp_string : twitterListPositive)
+                 {
+                	 String[] split_word = temp_string.split(" ");
+
+                	 for(String compare_word : split_word)
+                	 {
+                		 if (compare_word.equals(each_word)) countWord++;
+                	 }
+                 }
+                 wordInPositive.put(each_word, countWord);
+                 totalWordPositive++;
+                 uniqueWords.add(each_word.trim());
+             }
+        }
+    }
